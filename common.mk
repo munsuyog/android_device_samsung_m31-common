@@ -216,3 +216,6 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     hostapd \
     wpa_supplicant
+
+## Face Unlock
+TARGET_FACE_UNLOCK_SUPPORTED := true
