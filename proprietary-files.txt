@@ -229,8 +229,10 @@ vendor/tee/tui/resolution_common/ID00000100
 vendor/etc/sensors/hals.conf
 -vendor/lib/sensors.sensorhub.so
 -vendor/lib/sensors.grip.so
+-vendor/lib/sensors.inputvirtual.so
 -vendor/lib64/sensors.sensorhub.so
 -vendor/lib64/sensors.grip.so
+-vendor/lib64/sensors.inputvirtual.so
 
 ## Widevine
 -vendor/bin/hw/android.hardware.drm@1.4-service.widevine
