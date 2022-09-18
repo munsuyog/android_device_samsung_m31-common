@@ -22,10 +22,9 @@ $(call inherit-product, vendor/samsung/m31-common/m31-common-vendor.mk)
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio.effect@7.0-impl:32 \
-    android.hardware.audio@7.0-impl:32 \
+    android.hardware.audio@7.1-impl:32 \
     android.hardware.audio.service \
-    android.hardware.bluetooth.audio@2.0-impl:32 \
-    audio.a2dp.default \
+    android.hardware.bluetooth.audio-impl:32 \
     audio.bluetooth.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -59,9 +58,31 @@ PRODUCT_PACKAGES += \
     libbt-vendor:64
 
 PRODUCT_COPY_FILES += \
-    hardware/samsung_slsi/libbt/conf/bt_did.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_did.conf \
-    hardware/samsung_slsi/libbt/conf/bt_vendor.conf:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth/bt_vendor.conf \
     $(COMMON_PATH)/configs/sysconfig/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml
+
+# Set supported Bluetooth profiles to enabled
+PRODUCT_PRODUCT_PROPERTIES += \
+    bluetooth.profile.asha.central.enabled=true \
+    bluetooth.profile.a2dp.source.enabled=true \
+    bluetooth.profile.avrcp.target.enabled=true \
+    bluetooth.profile.bap.broadcast.assist.enabled=true \
+    bluetooth.profile.bap.unicast.server.enabled=true \
+    bluetooth.profile.bas.client.enabled=true \
+    bluetooth.profile.csip.set_coordinator.enabled=true \
+    bluetooth.profile.gatt.enabled=true \
+    bluetooth.profile.hap.client.enabled=true \
+    bluetooth.profile.hfp.ag.enabled=true \
+    bluetooth.profile.hid.device.enabled=true \
+    bluetooth.profile.hid.host.enabled=true \
+    bluetooth.profile.map.server.enabled=true \
+    bluetooth.profile.mcp.server.enabled=true \
+    bluetooth.profile.opp.enabled=true \
+    bluetooth.profile.pan.nap.enabled=true \
+    bluetooth.profile.pan.panu.enabled=true \
+    bluetooth.profile.pbap.server.enabled=true \
+    bluetooth.profile.sap.server.enabled=true \
+    bluetooth.profile.tbs.server.enabled=true \
+    bluetooth.profile.vc.server.enabled=true
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -89,7 +110,7 @@ PRODUCT_PACKAGES += \
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor:32 \
-    android.hardware.drm@1.4-service.clearkey
+    android.hardware.drm-service.clearkey
 
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
@@ -219,6 +240,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/power/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+
+# Utils
+PRODUCT_COPY_FILES += \
+    prebuilts/vndk/v32/arm64/arch-arm64-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib64/libutils-v32.so \
+    prebuilts/vndk/v32/arm64/arch-arm-armv8-a/shared/vndk-sp/libutils.so:$(TARGET_COPY_OUT_VENDOR)/lib/libutils-v32.so
 
 # Public Libraries
 PRODUCT_COPY_FILES += \

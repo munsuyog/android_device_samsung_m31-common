@@ -85,4 +85,17 @@ if [ -z "${ONLY_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt
     extract "${MY_DIR}/../${DEVICE}/proprietary-files.txt" "${SRC}" "${KANG}" --section "${SECTION}"
 fi
 
+# Utils patch
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib64/libexynosdisplay.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/vendor/lib/libexynosdisplay.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib64/hw/hwcomposer.exynos9611.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib/hw/hwcomposer.exynos9611.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib/sensors.sensorhub.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib64/sensors.sensorhub.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib/sensors.grip.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib64/sensors.grip.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib/sensors.inputvirtual.so
+"${PATCHELF}" --replace-needed libutils.so libutils-v32.so $BLOB_ROOT/proprietary/vendor/lib64/sensors.inputvirtual.so
+
 "${MY_DIR}/setup-makefiles.sh"
+
