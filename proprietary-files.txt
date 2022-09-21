@@ -12,7 +12,7 @@ vendor/etc/usb_audio_policy_configuration.xml
 -vendor/lib/lib_SamsungRec_07010.so
 -vendor/lib/lib_SoundAlive_SRC384_ver320.so
 -vendor/lib/lib_soundaliveresampler.so
--vendor/lib/libaudio_soundtrigger.so							
+-vendor/lib/libaudio_soundtrigger.so
 -vendor/lib/libalsautils_sec.so
 -vendor/lib/libaudioproxy.so
 -vendor/lib/libfloatingfeature.so
@@ -41,7 +41,7 @@ vendor/lib64/libbauthtzcommon.so
 vendor/lib64/libegis_fp_normal_sensor_test.so
 vendor/lib64/libgf_in_system_lib.so
 vendor/lib64/libqfp_sensortest.so
-vendor/lib64/libsynaFpSensorTestNwd.so							  
+vendor/lib64/libsynaFpSensorTestNwd.so
 
 ## Bluetooth
 # Bluetooth (aptX) - from crosshatch - QP1A.190711.020
@@ -70,6 +70,10 @@ vendor/lib64/libsynaFpSensorTestNwd.so
 -vendor/lib64/libuniplugin.so
 
 ## Codecs
+vendor/etc/media_codecs_c2_sec.xml
+vendor/etc/media_codecs_c2_sec_qcp.xml
+vendor/etc/media_codecs_c2_sec_wmx.xml
+vendor/etc/media_codecs_c2_sec_ape.xml
 vendor/etc/media_codecs.xml
 vendor/etc/media_codecs_performance.xml
 vendor/etc/media_profiles_V1_0.xml
@@ -145,10 +149,25 @@ vendor/etc/init/vendor.samsung.hardware.gnss@2.0-service.rc
 -vendor/lib64/libexynosscaler.so
 -vendor/lib64/libexynosutils.so
 -vendor/lib64/libexynosv4l2.so
+-vendor/lib/mediadrm/libwvdrmengine.so
+
+##
+-vendor/lib64/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0.so
+-vendor/bin/hw/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service
+vendor/etc/init/vendor.samsung_slsi.hardware.ExynosHWCServiceTW@1.0-service.rc
 
 ## Keymaster
 -vendor/lib64/libkeymaster_helper.so
 -vendor/lib64/libskeymaster4device.so
+
+## Protobuf
+-vendor/lib/libprotobuf-cpp-full-3.9.1.so
+-vendor/lib64/libprotobuf-cpp-full-3.9.1.so
+
+## McRegistry
+vendor/app/mcRegistry/00060308060501020000000000000000.tabin
+vendor/app/mcRegistry/07061000000000000000000000000000.tlbin
+vendor/app/mcRegistry/09090000070100010000000000000000.tlbin
 
 ## Memtrack
 -vendor/lib64/hw/memtrack.exynos9611.so
