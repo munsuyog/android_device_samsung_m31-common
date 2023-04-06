@@ -163,11 +163,13 @@ PRODUCT_COPY_FILES += \
 
 # Memtrack
 PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl:64 \
-    android.hardware.memtrack@1.0-service
+    android.hardware.memtrack-service.samsung-mali
 
 # Overlays
-DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(COMMON_PATH)/overlay \
+    $(COMMON_PATH)/overlay-lineage 
+
 PRODUCT_ENFORCE_RRO_TARGETS += *
 
 # Permissions
